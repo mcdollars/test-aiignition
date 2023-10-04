@@ -12,7 +12,7 @@ import { CloudUploadOutlined } from '@mui/icons-material';
  * Main page of the Application
  * @page Home
  */
-const Home: NextPage = React.memo(() => {
+const Home: NextPage = () => {
 
   const [index, setIndex] = useState(0)
 
@@ -49,6 +49,6 @@ const Home: NextPage = React.memo(() => {
       </Grid>
     </Stack>
   );
-});
+};
 
 export default Home;
