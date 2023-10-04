@@ -70,7 +70,7 @@ const SignUp: NextPage = () => {
                 Create an account
               </Typography>
               <Typography sx={{ fontSize: "16px" }}>
-                Don't you have an account?&nbsp;
+                {`Don't you have an account?`}&nbsp;
               </Typography>
               <Link href="/auth/signup">
                 <Typography sx={{ fontSize: "16px", textDecoration: 'underline' }}>
