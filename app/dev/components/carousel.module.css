@@ -1,0 +1,15 @@
+.prevCard {
+  left: calc(0% + 2rem);
+  opacity: 0;
+}
+
+.activeCard {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nextCard {
+  left: 100%;
+  transform: translateX(calc(-100% - 2rem));
+  opacity: 0;
+}
