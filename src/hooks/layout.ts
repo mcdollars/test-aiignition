@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
-import useWindowsSize from './useWindowSize';
 import { useMediaQuery, useTheme } from '@mui/material';
-import { IS_SERVER } from 'src/utils';
 
 export const MOBILE_SCREEN_MAX_WIDTH = 600; // Sync with https://mui.com/material-ui/customization/breakpoints/
 export const SERVER_SIDE_ON_MOBILE_DEFAULT_VALUE = true; // true - for mobile, false - for desktop
@@ -10,12 +8,6 @@ export const SERVER_SIDE_ON_MOBILE_DEFAULT_VALUE = true; // true - for mobile, f
  * Hook to detect onMobile vs. onDesktop using "resize" event listener
  * @returns {boolean} true when on onMobile, false when on onDesktop
  */
-export function useOnMobileByWindowsResizing() {
-  const theme = useTheme();
-  const { width } = useWindowsSize();
-  const onMobile = width <= theme.breakpoints?.values?.sm ?? MOBILE_SCREEN_MAX_WIDTH;
-  return onMobile;
-}
 
 /**
  * Hook to detect onMobile vs. onDesktop using Media Query
@@ -66,10 +58,3 @@ function useMobileOrDesktopByChangingBodyClass() {
   }, [onMobile]);
 }
 
-/**
- * We need a "smart export wrappers", because we can not use hooks on the server side
- */
-// export const useOnMobile = IS_SERVER ? () => SERVER_SIDE_IS_MOBILE_VALUE : useOnMobileByWindowsResizing;
-// export const useOnMobile = IS_SERVER ? () => SERVER_SIDE_IS_MOBILE_VALUE : useOnMobileByMediaQuery;
-export const useOnMobile = IS_SERVER ? () => SERVER_SIDE_ON_MOBILE_DEFAULT_VALUE : useOnMobileForNextJs;
-export const useBodyClassForMobileOrDesktop = IS_SERVER ? () => undefined : useMobileOrDesktopByChangingBodyClass;
