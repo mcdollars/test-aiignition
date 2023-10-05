@@ -1,5 +1,4 @@
 import { useCallback } from 'react';
-import { sessionStorageGet, sessionStorageDelete } from 'src/utils/sessionStorage';
 import { useAppStore } from '../store';
 
 /**
@@ -10,7 +9,6 @@ export function useIsAuthenticated() {
   const [state] = useAppStore();
   let result = state.isAuthenticated;
 
-  result = Boolean(sessionStorageGet('access_token', ''));
 
   return result;
 }
@@ -24,7 +22,6 @@ export function useEventLogout() {
 
   return useCallback(() => {
     // TODO: AUTH: replace next line with access token saving
-    sessionStorageDelete('access_token');
 
     dispatch({ type: 'LOG_OUT' });
   }, [dispatch]);
