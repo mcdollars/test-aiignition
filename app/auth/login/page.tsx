@@ -69,14 +69,16 @@ const SignUp: NextPage = () => {
               <Typography sx={{ fontSize: "26px" }}>
                 Create an account
               </Typography>
-              <Typography sx={{ fontSize: "16px" }}>
-                {`Don't you have an account?`}&nbsp;
-              </Typography>
-              <Link href="/auth/signup">
-                <Typography sx={{ fontSize: "16px", textDecoration: 'underline' }}>
-                  Sign up
+              <Box sx={{display: 'flex'}}>
+                <Typography sx={{ fontSize: "16px", color: 'gray' }}>
+                  {`Don't you have an account?`}&nbsp;
                 </Typography>
-              </Link>
+                <Link href="/auth/signup">
+                  <Typography sx={{ fontSize: "16px", textDecoration: 'underline' }}>
+                    Sign up
+                  </Typography>
+                </Link>
+              </Box>
             </Box>
             <SignupButton>
               <FacebookOutlined sx={{ fontSize: "25px", color: "rgb(24, 119, 242)", mr: 1 }} />Continue with Facebook

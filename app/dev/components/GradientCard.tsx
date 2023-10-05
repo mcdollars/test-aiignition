@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, Grid, Stack } from '@mui/material';
 import Link from 'next/link';
 import { FunctionComponent } from 'react';
+import styles from './carousel.module.css'
 
 interface GradientCardProps {
   start: any,
@@ -16,8 +17,8 @@ const GradientCard: FunctionComponent<GradientCardProps> = ({
   path
 }) => {
   return (
-    <Grid item xs={12} md={6} justifyContent={"center"} display={'flex'} marginBottom={4}>
-      <Link href={path} style={{width: '90%'}}>
+    <Grid item xs={12} md={6} className={styles.gridright} display={'flex'} sx={{mb: 4, px: 4}}>
+      <Link href={path} className={styles.card}>
         <Card
           sx={{
             borderRadius: 3,

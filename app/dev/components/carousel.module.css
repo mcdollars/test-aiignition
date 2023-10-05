@@ -13,3 +13,36 @@
   transform: translateX(calc(-100% - 2rem));
   opacity: 0;
 }
+
+.player__wrapper {
+  position: relative;
+}
+
+.player {
+  object-fit: cover;
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  width: 90%
+}
+
+.gridleft, .gridright {
+  justify-content: center;
+}
+
+@media only screen and (min-width: 1300px) {
+  .card {
+    width: 615px
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .gridleft {
+    justify-content: end;
+  }
+  .gridright {
+    justify-content: start;
+  }
+}

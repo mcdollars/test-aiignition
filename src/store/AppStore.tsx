@@ -10,8 +10,6 @@ import {
 } from 'react';
 // import useMediaQuery from '@mui/material/useMediaQuery';
 import AppReducer from './AppReducer';
-import { localStorageGet } from '../utils/localStorage';
-import { IS_SERVER } from '../utils/environment';
 
 /**
  * AppState data structure and initial values
@@ -43,13 +41,10 @@ const AppContext = createContext<AppContextReturningType>([INITIAL_APP_STATE, ()
  */
 const AppStoreProvider: FunctionComponent<PropsWithChildren> = ({ children }) => {
   // const prefersDarkMode = IS_SERVER ? false : useMediaQuery('(prefers-color-scheme: dark)'); // Note: Conditional hook is bad idea :(
-  const prefersDarkMode = IS_SERVER ? false : window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const previousDarkMode = IS_SERVER ? false : Boolean(localStorageGet('darkMode', false));
   // const tokenExists = Boolean(loadToken());
 
   const initialState: AppStoreState = {
     ...INITIAL_APP_STATE,
-    darkMode: previousDarkMode || prefersDarkMode,
     // isAuthenticated: tokenExists,
   };
   const value: AppContextReturningType = useReducer(AppReducer, initialState);

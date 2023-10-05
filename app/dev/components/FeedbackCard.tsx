@@ -19,12 +19,12 @@ const FeedbackCard: FunctionComponent<FeedbackCardProps> = ({
 }) => {
 
   return (
-    <Grid item xs={12} md={6} justifyContent={"center"} display={'flex'} marginBottom={4}>
+    <Grid item xs={12} md={6} className={styles.gridleft} display={'flex'} sx={{mb: 4, px: 4}}>
       <Card
+        className={styles.card}
         sx={{
           borderRadius: 3,
           height: '365px',
-          width: '90%',
         }}>
         <Stack height={'100%'} flexWrap="wrap" justifyContent="center" alignItems="center">
           <Grid container sx={{

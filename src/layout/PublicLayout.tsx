@@ -3,8 +3,6 @@ import { FunctionComponent, PropsWithChildren, useCallback, useState } from 'rea
 import { Stack } from '@mui/material/';
 import ErrorBoundary from '../components/ErrorBoundary';
 import TopBar from './TopBar';
-import { useOnMobile } from '../hooks';
-import { TOP_BAR_DESKTOP_HEIGHT, TOP_BAR_MOBILE_HEIGHT } from './config';
 
 // TODO: change to your app name or other word
 const TITLE_PUBLIC = 'AI Ignition'; // Title for pages without/before authentication
@@ -14,14 +12,13 @@ const TITLE_PUBLIC = 'AI Ignition'; // Title for pages without/before authentica
  * @layout PublicLayout
  */
 const PublicLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
-  const onMobile = useOnMobile();
   const title = TITLE_PUBLIC;
 
   return (
     <Stack
       sx={{
         minHeight: '100vh', // Full screen height
-        paddingTop: onMobile ? TOP_BAR_MOBILE_HEIGHT : TOP_BAR_DESKTOP_HEIGHT,
+        paddingTop: 10
       }}
     >
       <Stack component="header">

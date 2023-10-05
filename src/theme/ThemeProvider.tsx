@@ -4,11 +4,10 @@ import { ThemeProvider as MuiThemeProvider, createTheme } from '@mui/material/st
 import CssBaseline from '@mui/material/CssBaseline';
 import EmotionCacheProvider from './EmotionCacheProvider';
 import { useAppStore } from '../store';
-import DARK_THEME from './dark';
 import LIGHT_THEME from './light';
 
 function getThemeByDarkMode(darkMode: boolean) {
-  return darkMode ? createTheme(DARK_THEME) : createTheme(LIGHT_THEME);
+  return createTheme(LIGHT_THEME);
 }
 
 /**

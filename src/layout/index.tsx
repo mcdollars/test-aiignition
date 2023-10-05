@@ -1,3 +1,3 @@
-import CurrentLayout from './CurrentLayout';
+import PublicLayout from './PublicLayout';
 
-export { CurrentLayout as default, CurrentLayout };
+export { PublicLayout as default, PublicLayout };

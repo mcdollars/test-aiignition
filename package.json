@@ -40,7 +40,9 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-icons": "^4.11.0"
+    "react-icons": "^4.11.0",
+    "react-player": "^2.13.0",
+    "screenfull": "^6.0.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "latest",
