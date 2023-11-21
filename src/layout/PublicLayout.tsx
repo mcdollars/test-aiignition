@@ -11,6 +11,7 @@ const TITLE_PUBLIC = 'AI Ignition'; // Title for pages without/before authentica
  * Renders "Public Layout" composition
  * @layout PublicLayout
  */
+
 const PublicLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
   const title = TITLE_PUBLIC;
 

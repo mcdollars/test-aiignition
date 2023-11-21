@@ -24,9 +24,6 @@ const INITIAL_APP_STATE: AppStoreState = {
   isAuthenticated: false, // Overridden in AppStore by checking auth token
 };
 
-/**
- * Instance of React Context for global AppStore
- */
 export type AppContextReturningType = [AppStoreState, Dispatch<any>];
 const AppContext = createContext<AppContextReturningType>([INITIAL_APP_STATE, () => null]);
 
